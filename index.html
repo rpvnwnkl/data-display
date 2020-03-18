@@ -1,4 +1,5 @@
-//https://stackoverflow.com/questions/17609279/how-to-get-parameters-from-url-in-html-page-and-display-it-in-a-textarea
+<!-- https://stackoverflow.com/questions/17609279/how-to-get-parameters-from-url-in-html-page-and-display-it-in-a-textarea -->
+<!-- https://stackoverflow.com/questions/901115/how-can-i-get-query-string-values-in-javascript -->
 <html>
     <head>
         <script type="text/javascript">
@@ -9,7 +10,11 @@
                 return results == null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
             }
             function getUrlData() {
-                var comment = getParameter("comment");
+                const urlParams = new URLSearchParams(window.location.search);
+                const stationID = urlParams.get('stationID');
+                const duration  = urlParams.get('duration');
+
+                var comment = ('Station: '+stationID+'&#013;'+'Duration: '+duration);
                 document.getElementsByName("my-textarea")[0].value = comment;
             }
 
