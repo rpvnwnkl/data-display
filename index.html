@@ -16,12 +16,19 @@
 
                 var comment = ('Station: '+stationID+'\r\nDuration: '+duration);
                 document.getElementsByName("my-textarea")[0].value = comment;
+                document.getElementsByName("stationText")[0].value = stationID;
+                document.getElementsByName("durationText")[0].value = duration;
+
             }
 
         </script>
     </head>
     <body onload="getUrlData()">
-        <h1>welcome</h1>
+        <h1>Your Station ID and Duration</h1>
+        <h3>Station ID</h3>
+        <p name="stationText"></p>
+        <h3>Duration</h3>
+        <p name="durationText"></p>
         <textarea name="my-textarea" readonly rows="5" cols="30"> </textarea>       
 
 
