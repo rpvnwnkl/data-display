@@ -16,8 +16,8 @@
 
                 var comment = ('Station: '+stationID+'\r\nDuration: '+duration);
                 document.getElementsByName("my-textarea")[0].value = comment;
-                document.getElementsByName("stationText")[0].value = stationID;
-                document.getElementsByName("durationText")[0].value = duration;
+                document.getElementsByName("stationText")[0].innerHTML = stationID;
+                document.getElementsByName("durationText")[0].innerHTML = duration;
 
             }
 
