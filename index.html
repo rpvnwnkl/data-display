@@ -3,34 +3,22 @@
 <html>
     <head>
         <script type="text/javascript">
-            function getParameterByName(name) {
-                name = name.replace(/[\[]/, "\\\[").replace(/[\]]/, "\\\]");
-                var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
-                results = regex.exec(location.search);
-                return results == null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
-            }
             function getUrlData() {
                 const urlParams = new URLSearchParams(window.location.search);
                 const stationID = urlParams.get('stationID');
                 const duration  = urlParams.get('duration');
 
-                var comment = ('Station: '+stationID+'\r\nDuration: '+duration);
-                document.getElementsByName("my-textarea")[0].value = comment;
                 document.getElementsByName("stationText")[0].innerHTML = stationID;
                 document.getElementsByName("durationText")[0].innerHTML = duration;
-
             }
 
         </script>
     </head>
     <body onload="getUrlData()">
-        <h1>Your Station ID and Duration</h1>
         <h3>Station ID</h3>
         <p name="stationText"></p>
         <h3>Duration</h3>
         <p name="durationText"></p>
-        <textarea name="my-textarea" readonly rows="5" cols="30"> </textarea>       
-
-
+        
     </body>
 </html>
